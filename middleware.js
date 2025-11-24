@@ -3,7 +3,21 @@
  * This middleware is designed to be completely skipped during static export
  */
 import { NextResponse } from 'next/server';
-import { marketingRoutes } from './app/marketing-fix';
+
+const marketingRoutes = [
+  '/',
+  '/about',
+  '/blog',
+  '/contact',
+  '/courses',
+  '/curriculum',
+  '/faq',
+  '/privacy-policy',
+  '/resources',
+  '/reviews',
+  '/services',
+  '/terms'
+];
 
 export function middleware(request) {
   const url = request.nextUrl.clone();
